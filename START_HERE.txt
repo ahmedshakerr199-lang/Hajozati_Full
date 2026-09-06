@@ -1,0 +1,15 @@
+حجوزاتي - HAJOZATI
+
+1) افتح هذا المجلد بالكامل في Visual Studio Code.
+2) تأكد أن Flutter يعمل: flutter doctor
+3) شغّل: flutter pub get
+4) للتجربة الأسرع: flutter run -d chrome
+5) أو اختر جهاز Android من VS Code ثم: flutter run
+
+إذا كانت ملفات Android/iOS المولدة محليًا مطلوبة/حدث خطأ منصة، نفّذ:
+flutter create --platforms=android,ios,web .
+flutter pub get
+
+كود التطبيق موجود في lib/
+مخططات المشروع الأصلية موجودة في docs/
+البيانات الحالية Mock، والـBackend الحقيقي مرحلة لاحقة.
