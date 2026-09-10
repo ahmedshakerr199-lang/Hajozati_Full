@@ -39,7 +39,7 @@ jobs:
         run: flutter test
 
       - name: Build Web
-        run: flutter build web --base-href "/Hajozati_Full/"
+        run: flutter build web
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
