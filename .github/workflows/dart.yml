@@ -1,10 +1,19 @@
-name: Flutter Web Build
+name: Flutter Web Build & Deploy
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -30,4 +39,14 @@ jobs:
         run: flutter test
 
       - name: Build Web
-        run: flutter build web
+        run: flutter build web --base-href "/Hajozati_Full/"
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/web
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
